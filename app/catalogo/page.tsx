@@ -4,6 +4,7 @@ import { useState, useMemo } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { productos, categorias, marcas } from "@/lib/productos";
+import { ThemeToggle } from "@/app/components/ThemeToggle";
 
 export default function CatalogoPage() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState<string>("Todas");
@@ -77,12 +78,15 @@ export default function CatalogoPage() {
             >
               Mi Catálogo Online
             </Link>
-            <Link
-              href="/"
-              className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-            >
-              ← Volver al Inicio
-            </Link>
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+              <Link
+                href="/"
+                className="text-gray-600 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                ← Volver al Inicio
+              </Link>
+            </div>
           </div>
         </nav>
       </header>

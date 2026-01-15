@@ -121,12 +121,12 @@ export default function EditarProductoPage() {
   if (notFound) {
     return (
       <div className="text-center py-12">
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
           Producto no encontrado
         </h2>
         <Link
           href="/admin/productos"
-          className="text-blue-600 hover:text-blue-700"
+          className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300"
         >
           ← Volver a productos
         </Link>
@@ -139,22 +139,22 @@ export default function EditarProductoPage() {
       <div className="mb-8">
         <Link
           href="/admin/productos"
-          className="text-blue-600 hover:text-blue-700 text-sm font-medium"
+          className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium"
         >
           ← Volver a productos
         </Link>
-        <h2 className="text-3xl font-bold text-gray-900 mt-4">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mt-4">
           Editar Producto
         </h2>
       </div>
 
-      <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-sm p-8">
+      <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 rounded-lg shadow-sm p-8">
         <div className="space-y-6">
           {/* Nombre */}
           <div>
             <label
               htmlFor="nombre"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
             >
               Nombre del Producto *
             </label>
@@ -165,7 +165,7 @@ export default function EditarProductoPage() {
               required
               value={formData.nombre}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="Ej: iPhone 15 Pro"
             />
           </div>
@@ -174,7 +174,7 @@ export default function EditarProductoPage() {
           <div>
             <label
               htmlFor="descripcion"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
             >
               Descripción *
             </label>
@@ -185,7 +185,7 @@ export default function EditarProductoPage() {
               value={formData.descripcion}
               onChange={handleChange}
               rows={4}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="Describe las características principales del producto..."
             />
           </div>
@@ -195,7 +195,7 @@ export default function EditarProductoPage() {
             <div>
               <label
                 htmlFor="categoriaId"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 Categoría *
               </label>
@@ -205,7 +205,7 @@ export default function EditarProductoPage() {
                 required
                 value={formData.categoriaId}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 {categorias.map((cat) => (
                   <option key={cat.id} value={cat.id}>
@@ -218,7 +218,7 @@ export default function EditarProductoPage() {
             <div>
               <label
                 htmlFor="marca"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 Marca *
               </label>
@@ -228,7 +228,7 @@ export default function EditarProductoPage() {
                 required
                 value={formData.marca}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               >
                 <option value="">Selecciona una marca</option>
                 {marcas.map((marca) => (
@@ -245,7 +245,7 @@ export default function EditarProductoPage() {
             <div>
               <label
                 htmlFor="precio"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 Precio ($) *
               </label>
@@ -258,7 +258,7 @@ export default function EditarProductoPage() {
                 step="0.01"
                 value={formData.precio}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="999.99"
               />
             </div>
@@ -266,7 +266,7 @@ export default function EditarProductoPage() {
             <div>
               <label
                 htmlFor="stock"
-                className="block text-sm font-medium text-gray-700 mb-2"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
                 Stock *
               </label>
@@ -278,7 +278,7 @@ export default function EditarProductoPage() {
                 min="0"
                 value={formData.stock}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 placeholder="10"
               />
             </div>
@@ -288,7 +288,7 @@ export default function EditarProductoPage() {
           <div>
             <label
               htmlFor="imagen"
-              className="block text-sm font-medium text-gray-700 mb-2"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
             >
               URL de Imagen
             </label>
@@ -298,7 +298,7 @@ export default function EditarProductoPage() {
               name="imagen"
               value={formData.imagen}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               placeholder="https://ejemplo.com/imagen.jpg"
             />
           </div>
@@ -311,9 +311,9 @@ export default function EditarProductoPage() {
               name="destacado"
               checked={formData.destacado}
               onChange={handleChange}
-              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+              className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 dark:border-gray-600 rounded"
             />
-            <label htmlFor="destacado" className="ml-2 block text-sm text-gray-900">
+            <label htmlFor="destacado" className="ml-2 block text-sm text-gray-900 dark:text-gray-300">
               Marcar como producto destacado
             </label>
           </div>
@@ -330,7 +330,7 @@ export default function EditarProductoPage() {
           </button>
           <Link
             href="/admin/productos"
-            className="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-900 font-semibold py-3 rounded-lg transition-colors text-center"
+            className="flex-1 bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white font-semibold py-3 rounded-lg transition-colors text-center"
           >
             Cancelar
           </Link>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { productos } from "@/lib/productos";
+import { ThemeToggle } from "@/app/components/ThemeToggle";
 
 export default function Home() {
   const productosDestacados = productos.filter(p => p.destacado).slice(0, 3);
@@ -14,12 +15,23 @@ export default function Home() {
             <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
               Mi Catálogo Online
             </div>
-            <Link
-              href="/catalogo"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors font-medium"
-            >
-              Ver Catálogo
-            </Link>
+            <div className="flex gap-3 items-center">
+              <ThemeToggle />
+              <div className="flex gap-3">
+                <button
+                  className="bg-gray-200 hover:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 text-gray-900 dark:text-white px-6 py-2 rounded-lg transition-colors font-medium"
+                  title="Menú"
+                >
+                  ☰
+                </button>
+                <Link
+                  href="/catalogo"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors font-medium"
+                >
+                  Ver Catálogo
+                </Link>
+              </div>
+            </div>
           </div>
         </nav>
       </header>
